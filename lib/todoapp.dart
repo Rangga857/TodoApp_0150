@@ -191,6 +191,12 @@ class _TodoPageState extends State<TodoPage> {
                             borderRadius: BorderRadius.circular(8)
                           ),
                         ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
                       ) ,)
                   ],
                 )
