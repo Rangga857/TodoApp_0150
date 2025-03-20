@@ -226,6 +226,50 @@ class _TodoPageState extends State<TodoPage> {
                   fontWeight: FontWeight.bold
                 ),
               ),
+              Expanded(child: ListView.builder(
+                itemBuilder: (context, index){
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: EdgeInsets.all(16),
+                    margin: EdgeInsets.all(8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              _todoList[index]['task'],
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            Text(
+                                'Due: ${DateFormat('EEE, MMM d • hh:mm a').format(_todoList[index]['dateTime'])}',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey[700],
+                                ),
+                              ),
+                              Text(
+                                _todoList[index]['done'] ? 'Done' : 'Not Done',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: _todoList[index]['done'] ? Colors.green : Colors.red,
+                                ),
+                              ),
+                          ],
+                        ),
+                      ],
+                    )
+                  );
+                }
+                ))
             ]
           ),
         )
