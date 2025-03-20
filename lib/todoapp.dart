@@ -220,7 +220,7 @@ class _TodoPageState extends State<TodoPage> {
               ),
               SizedBox(height: 20),
               Text(
-                "Task List",
+                "List Tasks",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold
