@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class TodoPage extends StatefulWidget {
   const TodoPage({super.key});
@@ -133,7 +134,26 @@ class _TodoPageState extends State<TodoPage> {
               Text(
                 "Task Date & Time: ",
                 style: TextStyle(fontWeight: FontWeight.bold),
-              )
+              ),
+              Row(children: [
+                Expanded(child: Text(
+                  _selectedDate == null
+                  ?"Selecet a date and time"
+                  :DateFormat('EEE, MMM d, y h:mm a').format(_selectedDate!),
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: _dateTimeValidate == null
+                    ?Colors.red
+                    :Colors.black
+                  ),
+                ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.calendar_today,
+                  color: Colors.teal),
+                  onPressed: () => _showDateTimePicker(context)
+                  ,)
+              ],)
             ]
           ),
         )
