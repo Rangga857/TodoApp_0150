@@ -163,6 +163,22 @@ class _TodoPageState extends State<TodoPage> {
                   fontSize: 12),
                 ),
               ),
+              SizedBox(height: 10),
+              Form(
+                key: _key,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _controller,
+                        decoration: InputDecoration(
+                          labelText: "Task Name",
+                          hintText: "Enter your task",
+                        ),
+                      ) ,)
+                  ],
+                )
+              )
             ]
           ),
         )
