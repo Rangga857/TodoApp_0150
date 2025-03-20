@@ -81,6 +81,29 @@ class _TodoPageState extends State<TodoPage> {
                   initialDateTime: _selectedDate ?? DateTime.now(),
                 )
               ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                style:ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFF00A99D),
+                foregroundColor: Colors.white,
+                fixedSize: Size(160,46),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                )
+                ),
+                onPressed: (){
+                setState(() {
+                  _selectedDate = _tempDateTime;
+                  _dateTimeValidate = null;
+                });
+                Navigator.pop(context);
+                }, 
+                child: 
+                Text("Select",
+                style: TextStyle(fontSize: 18,
+                fontWeight: FontWeight.w500),
+                ),
+              )
             ],
           ),
         );
