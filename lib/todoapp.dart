@@ -21,7 +21,22 @@ class _TodoPageState extends State<TodoPage> {
       _dateTimeValidate = _selectedDate == null?
       'Please select a date' : null;
     });
+
+    if (_key.currentState!.validate() && _selectedDate != null) {
+      setState(() {
+        _todoList.add({
+          'task': _controller.text,
+          'date': _selectedDate,
+          'done': false
+        });
+        _controller.clear();
+        _selectedDate = null;
+      });
+
+      
+    }
   }
+  
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
