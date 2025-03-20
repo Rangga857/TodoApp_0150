@@ -249,7 +249,7 @@ class _TodoPageState extends State<TodoPage> {
                               ),
                             ),
                             Text(
-                                'Due: ${DateFormat('EEE, MMM d • hh:mm a').format(_todoList[index]['dateTime'])}',
+                                'Due: ${DateFormat('EEE, MMM d • hh:mm a').format(_todoList[index]['date'])}',
                                 style: TextStyle(
                                   fontSize: 14,
                                   color: Colors.grey[700],
