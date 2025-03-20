@@ -33,7 +33,11 @@ class _TodoPageState extends State<TodoPage> {
         _selectedDate = null;
       });
 
-      
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Task added successfully"),
+          backgroundColor: Colors.green,)
+      );
     }
   }
   
