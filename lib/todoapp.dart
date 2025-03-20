@@ -217,7 +217,15 @@ class _TodoPageState extends State<TodoPage> {
                     ),
                   ],
                 )
-              )
+              ),
+              SizedBox(height: 20),
+              Text(
+                "Task List",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
             ]
           ),
         )
