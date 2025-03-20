@@ -8,6 +8,14 @@ class TodoPage extends StatefulWidget {
 }
 
 class _TodoPageState extends State<TodoPage> {
+  final _key = GlobalKey<FormState>();
+  final TextEditingController _controller = TextEditingController();
+  DateTime? _selectedDate;
+  DateTime _tempDateTime = DateTime.now();
+  String? _dateTimeValidate
+
+  List<Map<String, dynamic>> _todoList = [];
+  
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
