@@ -153,7 +153,16 @@ class _TodoPageState extends State<TodoPage> {
                   color: Colors.teal),
                   onPressed: () => _showDateTimePicker(context)
                   ,)
-              ],)
+              ],),
+              if(_dateTimeValidate != null)
+              Padding(padding: EdgeInsets.only(left: 5, top: 5),
+              child: Text(
+                _dateTimeValidate!,
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 12),
+                ),
+              ),
             ]
           ),
         )
