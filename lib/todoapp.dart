@@ -12,10 +12,16 @@ class _TodoPageState extends State<TodoPage> {
   final TextEditingController _controller = TextEditingController();
   DateTime? _selectedDate;
   DateTime _tempDateTime = DateTime.now();
-  String? _dateTimeValidate
+  String? _dateTimeValidate;
 
   List<Map<String, dynamic>> _todoList = [];
-  
+
+  void addData(){
+    setState(() {
+      _dateTimeValidate = _selectedDate == null?
+      'Please select a date' : null;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
