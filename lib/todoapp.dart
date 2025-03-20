@@ -265,11 +265,20 @@ class _TodoPageState extends State<TodoPage> {
                               ),
                           ],
                         ),
+                        Checkbox(
+                            activeColor: Colors.teal,
+                            value: _todoList[index]['done'],
+                            onChanged: (bool? value) {
+                              setState(() {
+                                _todoList[index]['done'] = value!;
+                              });
+                            },
+                          ),
                       ],
                     )
                   );
                 }
-                ))
+              ))
             ]
           ),
         )
