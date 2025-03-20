@@ -138,13 +138,13 @@ class _TodoPageState extends State<TodoPage> {
               Row(children: [
                 Expanded(child: Text(
                   _selectedDate == null
-                  ?"Selecet a date and time"
+                  ?"Select a date and time"
                   :DateFormat('EEE, MMM d, y h:mm a').format(_selectedDate!),
                   style: TextStyle(
                     fontSize: 16,
                     color: _dateTimeValidate == null
-                    ?Colors.red
-                    :Colors.black
+                    ?Colors.black
+                    :Colors.red
                   ),
                 ),
                 ),
@@ -226,7 +226,9 @@ class _TodoPageState extends State<TodoPage> {
                   fontWeight: FontWeight.bold
                 ),
               ),
-              Expanded(child: ListView.builder(
+              Expanded(
+                child: ListView.builder(
+                itemCount: _todoList.length,
                 itemBuilder: (context, index){
                   return Container(
                     decoration: BoxDecoration(
@@ -249,7 +251,7 @@ class _TodoPageState extends State<TodoPage> {
                               ),
                             ),
                             Text(
-                                'Due: ${DateFormat('EEE, MMM d • hh:mm a').format(_todoList[index]['date'])}',
+                                'Deadline: ${DateFormat('EEE, MMM d • hh:mm a').format(_todoList[index]['date'])}',
                                 style: TextStyle(
                                   fontSize: 14,
                                   color: Colors.grey[700],
