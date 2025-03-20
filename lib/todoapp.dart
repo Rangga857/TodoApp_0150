@@ -174,6 +174,22 @@ class _TodoPageState extends State<TodoPage> {
                         decoration: InputDecoration(
                           labelText: "Task Name",
                           hintText: "Enter your task",
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal, width: 1.5), 
+                            borderRadius: BorderRadius.circular(8)
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.teal, width: 2), 
+                            borderRadius: BorderRadius.circular(8)
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.red, width: 1.5), 
+                            borderRadius: BorderRadius.circular(8)
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.red, width: 2), 
+                            borderRadius: BorderRadius.circular(8)
+                          ),
                         ),
                       ) ,)
                   ],
