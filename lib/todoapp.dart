@@ -128,6 +128,11 @@ class _TodoPageState extends State<TodoPage> {
                     fontWeight: FontWeight.bold
                   ),
                 )
+              ),
+              SizedBox(height: 20),
+              Text(
+                "Task Date & Time: ",
+                style: TextStyle(fontWeight: FontWeight.bold),
               )
             ]
           ),
