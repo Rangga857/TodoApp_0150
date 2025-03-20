@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TodoPage extends StatefulWidget {
@@ -39,6 +40,52 @@ class _TodoPageState extends State<TodoPage> {
           backgroundColor: Colors.green,)
       );
     }
+  }
+
+  void _showDateTimePicker(BuildContext context){
+    showModalBottomSheet(
+      context: context, 
+      builder: (BuildContext builder){
+        return Container(
+          height: 280,
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(width: 30),
+                Text(
+                  "Set Task Date & Time",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold
+                  ),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.close,
+                    color: Colors.grey),
+                    onPressed: (){
+                      Navigator.pop(context);
+                    },
+                  )              
+                ],
+              ),
+              SizedBox(height: 10),
+              Expanded(
+                child: CupertinoDatePicker(
+                  onDateTimeChanged: (DateTime newDatetime){
+                    _tempDateTime = newDatetime;
+                  },
+                  mode: CupertinoDatePickerMode.dateAndTime,
+                  initialDateTime: _selectedDate ?? DateTime.now(),
+                )
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
   
   @override
